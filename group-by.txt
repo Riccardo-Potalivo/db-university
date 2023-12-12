@@ -6,3 +6,36 @@
     AS `enrolment_year`
     FROM `students`
     GROUP BY YEAR(`enrolment_date`);
+
+2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio
+
+    SELECT
+    REPLACE(
+    REPLACE(
+    REPLACE(
+    REPLACE(
+    REPLACE(
+    REPLACE(
+    REPLACE(
+    REPLACE(
+    REPLACE(
+    REPLACE(
+    REPLACE(
+        REPLACE(`office_address`, 'Piano',''),
+        'Appartamento', ''),
+        '0', ''),
+        '1', ''),
+        '2', ''),
+        '3', ''),
+        '4', ''),
+        '5', ''),
+        '6', ''),
+        '7', ''),
+        '8', ''),
+        '9', '')
+    AS `office_address`,
+    COUNT(*) 
+    AS `teacher_number`
+    FROM `teachers`
+    GROUP BY `office_address`  
+    ORDER BY `teachers`.`office_address`  ASC;
