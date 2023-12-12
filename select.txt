@@ -32,3 +32,9 @@
     SELECT * FROM `degrees`
     WHERE `name` 
     LIKE '%Laurea Magistrale%';
+
+7. Da quanti dipartimenti è composta l'uiversità
+
+    SELECT count(*) 
+    AS `departments_number` 
+    FROM `departments`;
